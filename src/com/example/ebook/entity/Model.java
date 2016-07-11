@@ -35,26 +35,26 @@ public class Model {
 	 * @return bitmap
 	 */
 	public Bitmap getLoaclBitmap(String url){
-		//return BitmapFactory.decodeFile(url);
-		BitmapFactory.Options op = new BitmapFactory.Options();  
-		op.inJustDecodeBounds = true;
-		Bitmap bmp = BitmapFactory.decodeFile(url, op); //获取尺寸信息
-//		Log.d("size ", op.outWidth+"");
-//		Log.d("size ", op.outHeight+"");
-		//获取比例大小
-		int wRatio = (int)Math.ceil(op.outWidth/90);
-		int hRatio = (int)Math.ceil(op.outHeight/120);
-		//如果超出指定大小，则缩小相应的比例
-		if(wRatio > 1 && hRatio > 1){
-			if(wRatio > hRatio){
-				op.inSampleSize = wRatio;
-		}else{
-			op.inSampleSize = hRatio;
-	    }
-	  }
-	  op.inJustDecodeBounds = false;
-	  bmp = BitmapFactory.decodeFile(url, op);
-	  return bmp;	
+		return BitmapFactory.decodeFile(url);
+//		BitmapFactory.Options op = new BitmapFactory.Options();  
+//		op.inJustDecodeBounds = true;
+//		Bitmap bmp = BitmapFactory.decodeFile(url, op); //获取尺寸信息
+////		Log.d("size ", op.outWidth+"");
+////		Log.d("size ", op.outHeight+"");
+//		//获取比例大小
+//		int wRatio = (int)Math.ceil(op.outWidth/90);
+//		int hRatio = (int)Math.ceil(op.outHeight/120);
+//		//如果超出指定大小，则缩小相应的比例
+//		if(wRatio > 1 && hRatio > 1){
+//			if(wRatio > hRatio){
+//				op.inSampleSize = wRatio;
+//		}else{
+//			op.inSampleSize = hRatio;
+//	    }
+//	  }
+//	  op.inJustDecodeBounds = false;
+//	  bmp = BitmapFactory.decodeFile(url, op);
+//	  return bmp;	
 	}
 	
 	public String downpiclocal(Context context,String url,int num){

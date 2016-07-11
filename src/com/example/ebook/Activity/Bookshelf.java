@@ -9,8 +9,12 @@ import com.example.ebook.R;
 import com.example.ebook.db.sql;
 import com.example.ebook.entity.book;
 import com.example.ebook.entity.bookShelfAdapter;
+import com.example.testtxtbook.BookPlayActivity;
+import com.example.testtxtbook.TestActivity;
 
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Environment;
@@ -20,8 +24,10 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.Window;
 import android.view.View.OnClickListener;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
+import android.widget.AdapterView.OnItemClickListener;
 
 public class Bookshelf extends Activity {
 	
@@ -38,37 +44,6 @@ public class Bookshelf extends Activity {
 	@Override
 	protected void onStart(){
 		super.onStart();
-		
-//		final AnimButtons animButtons;
-//		animButtons = (AnimButtons) findViewById(R.id.animButtons);
-//
-//		animButtons
-//				.setOnButtonClickListener(new AnimButtons.OnButtonClickListener() {
-//					@Override
-//					public void onButtonClick(View v, int id) {
-//						if (id == 0) {
-//							Intent intent0 = new Intent(
-//									Bookshelf.this,
-//									ActivityShop.class);
-//							startActivity(intent0);
-//						}
-//						if (id == 1) {
-//							Intent intent1 = new Intent(
-//									Bookshelf.this,
-//									Bookshelf.class);
-//							startActivity(intent1);
-//						}
-//						if (id == 2) {
-//							Intent intent2 = new Intent(
-//									Bookshelf.this,
-//									ActivitySetting.class);
-//							startActivity(intent2);
-//						}
-//
-//						animButtons.closeMenu();
-//					}
-//				});
-		
 		Log.d("Bookshelf", "onStart");
         init ();
         bookShelfAdapter mAdapter = new bookShelfAdapter(Bookshelf.this,bookShelfList);
@@ -81,6 +56,23 @@ public class Bookshelf extends Activity {
 				Intent intent = new Intent(Bookshelf.this,ActivityShop.class);
 				startActivity(intent);
 			}
+		});
+		shelf_list.setOnItemClickListener(new OnItemClickListener() {
+
+			@Override
+			public void onItemClick(AdapterView<?> parent, View view,
+				int position, long id) {
+
+					final book tbook = bookShelfList.get(position);
+					String bookp =tbook.getbookname();
+					Log.d("Bookshelf", "bookp");
+					Intent intent = new Intent();
+					intent.putExtra("bookname", tbook.getbookname());
+					intent.putExtra("bookpath", bookp);
+					intent.setClass(Bookshelf.this, BookPlayActivity.class);
+					Bookshelf.this.startActivity(intent);
+			}
+
 		});
 	}
 	//从数据库获取图书
