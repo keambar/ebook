@@ -38,8 +38,12 @@ public class book {
 		return bookid;
 	}
 	
-	public void setpic(Bitmap pic){
-		this.pic=pic;
+	public void setpic(String pic){
+		this.picurl=pic;
+	}
+
+	public void setbook(String url){
+		this.bookurl=url;
 	}
 	
 	public Bitmap getpic(){

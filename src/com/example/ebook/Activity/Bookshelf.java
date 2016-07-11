@@ -22,15 +22,52 @@ import android.widget.Button;
 import android.widget.ListView;
 
 public class Bookshelf extends Activity {
-
+	
 	private List<book> bookShelfList = new ArrayList<book>();
 	private String picpath=Environment.getExternalStorageDirectory()+ "";
 	private sql dbsql;
 	@Override
     protected void onCreate ( Bundle savedInstanceState ) {
+		Log.d("Bookshelf", "onCreate");
         super.onCreate ( savedInstanceState );
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView (R.layout.bookshelf);
+    }
+	@Override
+	protected void onStart(){
+		super.onStart();
+		
+//		final AnimButtons animButtons;
+//		animButtons = (AnimButtons) findViewById(R.id.animButtons);
+//
+//		animButtons
+//				.setOnButtonClickListener(new AnimButtons.OnButtonClickListener() {
+//					@Override
+//					public void onButtonClick(View v, int id) {
+//						if (id == 0) {
+//							Intent intent0 = new Intent(
+//									Bookshelf.this,
+//									ActivityShop.class);
+//							startActivity(intent0);
+//						}
+//						if (id == 1) {
+//							Intent intent1 = new Intent(
+//									Bookshelf.this,
+//									Bookshelf.class);
+//							startActivity(intent1);
+//						}
+//						if (id == 2) {
+//							Intent intent2 = new Intent(
+//									Bookshelf.this,
+//									ActivitySetting.class);
+//							startActivity(intent2);
+//						}
+//
+//						animButtons.closeMenu();
+//					}
+//				});
+		
+		Log.d("Bookshelf", "onStart");
         init ();
         bookShelfAdapter mAdapter = new bookShelfAdapter(Bookshelf.this,bookShelfList);
         ListView shelf_list = (ListView) findViewById(R.id.shelf_list);
@@ -43,13 +80,12 @@ public class Bookshelf extends Activity {
 				startActivity(intent);
 			}
 		});
-            
-    }
-
+	}
 	//从数据库获取图书
 	private void init() {
-//		dbsql= new sql(Bookshelf.this);
-//		bookShelfList = dbsql.getBooksInfo("tb_ebook");
+		dbsql= new sql(Bookshelf.this);
+		bookShelfList = dbsql.getBooksInfo();
+		Log.d("init", ""+ bookShelfList.size());
 	}
 
 }

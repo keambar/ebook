@@ -10,12 +10,14 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import com.example.ebook.R;
-import com.example.ebook.entity.Download;
+import com.example.ebook.db.sql;
 import com.example.ebook.entity.Model;
 import com.example.ebook.entity.book;
 import com.example.ebook.entity.bookAdapter;
 import com.example.ebook.until.Url;
+import com.lidroid.xutils.*;
 
+import android.R.string;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -46,6 +48,7 @@ public class ActivityShop extends Activity {
 	
 	public Url temUrl;
 
+	public sql temSql;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -53,6 +56,7 @@ public class ActivityShop extends Activity {
 		loaddown = false;
 		temModel=new Model();
 		temUrl= new Url();
+		temSql = new sql(ActivityShop.this);
 		buildbookList  thread= new buildbookList();
 		thread.start();
 		try {
@@ -77,15 +81,14 @@ public class ActivityShop extends Activity {
 
 				builder.setPositiveButton("确定", new DialogInterface.OnClickListener() {
 					public void onClick(DialogInterface dialog, int whichButton) {
-						new Thread(new Runnable() {
-							
-							@Override
-							public void run() {
-								// TODO Auto-generated method stub
-								temModel.downpiclocal(ActivityShop.this,tbook.getpicurl());
-								temModel.downbooklocal(ActivityShop.this,tbook.getbookurl());
-							}
-						}).start();
+
+						String picp =temModel.downpiclocal(ActivityShop.this,tbook.getpicurl(),tbook.getbookid());
+						String bookp =temModel.downbooklocal(ActivityShop.this,tbook.getbookurl(),tbook.getbookid());
+						book temBook=tbook;
+						temBook.setpic(picp);
+						temBook.setbook(bookp);
+						temSql.insertDataBy(temBook);								
+
 					}
 				});
 
@@ -101,6 +104,10 @@ public class ActivityShop extends Activity {
 		});
 	}
 
+	public void download(View v){
+		String path;
+		HttpUtils http= new HttpUtils();
+	}
 	
 	class buildbookList extends Thread{			
 			@Override

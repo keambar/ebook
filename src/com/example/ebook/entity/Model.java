@@ -23,10 +23,11 @@ import android.util.Log;
  *2016/7/8 
  */
 public class Model {
-	private String picpath=Environment.getExternalStorageDirectory()+ "ebook/pic/";
+	private String picpath=Environment.getExternalStorageDirectory()+ "/ebook/pic/";
 	
-	private String bookpath=Environment.getExternalStorageDirectory()+ "ebook/txt/";
+	private String bookpath=Environment.getExternalStorageDirectory()+ "/ebook/txt/";
 	
+	private sql temSql;
 	/**
 	 * 从本地载入图片
 	 * 
@@ -56,23 +57,24 @@ public class Model {
 	  return bmp;	
 	}
 	
-	public String downpiclocal(Context context,String url){
-		sql dbSql= new sql(context,"tb_booknum");
+	public String downpiclocal(Context context,String url,int num){
+		sql dbSql= new sql(context);
 		Url downUrl = new Url();
-		int num=dbSql.getBooksnum(dbSql.DATABASE_TABLE2);
-		String picp=picpath+ "pic_" + num + ".jpg";
+		//int num=dbSql.getBooksnum(dbSql.DATABASE_TABLE2);
+		String picp=picpath+ "pic_"  +num+ ".jpg";
 		Log.d("down",picp);
-		downUrl.downFile(url, picp);
+		downUrl.Download(url, picp);
 		return picp;
 	}
 	
-	public String downbooklocal(Context context,String url){
-		sql dbSql= new sql(context,"tb_boonum");
+	public String downbooklocal(Context context,String url,int num){
+		sql dbSql= new sql(context);
 		Url downUrl = new Url();
-		int num=dbSql.getBooksnum(dbSql.DATABASE_TABLE2);
-		String bookp=bookpath + "book_" + num +".txt";
+		//int num=dbSql.getBooksnum(dbSql.DATABASE_TABLE2);
+		String bookp=bookpath + "book_" +num+".txt";
 		Log.d("down",bookp);
-		downUrl.downFile(url, bookp);
+		downUrl.Download(url, bookp);
+		
 		return bookp;
 	}
 }

@@ -20,6 +20,7 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 import org.json.JSONString;
 
+import android.annotation.SuppressLint;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
@@ -28,9 +29,41 @@ import android.os.Message;
 import android.util.Log;
 
 import com.example.ebook.entity.book;
+import com.lidroid.xutils.HttpUtils;
+import com.lidroid.xutils.exception.HttpException;
+import com.lidroid.xutils.http.HttpHandler;
+import com.lidroid.xutils.http.ResponseInfo;
+import com.lidroid.xutils.http.callback.RequestCallBack;
+
+
+
+
 
 public class Url {
+	
+	@SuppressLint("SdCardPath")
+	public  void Download(String pathurl,String pathlocal ){
+		HttpUtils http = new HttpUtils();
+		HttpHandler handler = http.download(pathurl,pathlocal,
+		    true, // 如果目标文件存在，接着未完成的部分继续下载。服务器不支持RANGE时将从新下载。
+		    true, // 如果从请求返回信息中获取到文件名，下载完成后自动重命名。
+		    new RequestCallBack<File>() {
 
+				@Override
+				public void onFailure(HttpException arg0, String arg1) {
+					// TODO Auto-generated method stub
+					
+				}
+
+				@Override
+				public void onSuccess(ResponseInfo<File> arg0) {
+					// TODO Auto-generated method stub
+					
+				}
+
+		});
+	}
+	
 	public void DownUtil(String url) {
 
 		try {
