@@ -16,7 +16,7 @@ public final class R {
 		public static final int reading__reading_themes_vine_white = 0x7f02002c;
 	}
 	public static final class id {
-		public static final int action_settings = 0x7f0a0054;
+		public static final int action_settings = 0x7f0a0051;
 	}
 	public static final class menu {
 		public static final int main = 0x7f090006;

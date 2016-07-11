@@ -10,19 +10,14 @@ import com.example.ebook.db.sql;
 import com.example.ebook.entity.book;
 import com.example.ebook.entity.bookShelfAdapter;
 import com.example.testtxtbook.BookPlayActivity;
-import com.example.testtxtbook.TestActivity;
 
 import android.app.Activity;
-import android.app.AlertDialog;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.Environment;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.Window;
 import android.view.View.OnClickListener;
 import android.widget.AdapterView;
 import android.widget.Button;
@@ -32,7 +27,6 @@ import android.widget.AdapterView.OnItemClickListener;
 public class Bookshelf extends Activity {
 	
 	private List<book> bookShelfList = new ArrayList<book>();
-	private String picpath=Environment.getExternalStorageDirectory()+ "";
 	private sql dbsql;
 	@Override
     protected void onCreate ( Bundle savedInstanceState ) {
@@ -62,10 +56,10 @@ public class Bookshelf extends Activity {
 			@Override
 			public void onItemClick(AdapterView<?> parent, View view,
 				int position, long id) {
-
+					
 					final book tbook = bookShelfList.get(position);
-					String bookp =tbook.getbookname();
-					Log.d("Bookshelf", "bookp");
+					String bookp =tbook.getbookurl();
+					Log.d("Bookshelf", bookp);
 					Intent intent = new Intent();
 					intent.putExtra("bookname", tbook.getbookname());
 					intent.putExtra("bookpath", bookp);

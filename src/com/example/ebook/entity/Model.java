@@ -62,7 +62,7 @@ public class Model {
 		Url downUrl = new Url();
 		//int num=dbSql.getBooksnum(dbSql.DATABASE_TABLE2);
 		String picp=picpath+ "pic_"  +num+ ".jpg";
-		Log.d("down",picp);
+		//Log.d("down",picp);
 		downUrl.Download(url, picp);
 		return picp;
 	}
@@ -72,7 +72,7 @@ public class Model {
 		Url downUrl = new Url();
 		//int num=dbSql.getBooksnum(dbSql.DATABASE_TABLE2);
 		String bookp=bookpath + "book_" +num+".txt";
-		Log.d("down",bookp);
+		//Log.d("down",bookp);
 		downUrl.Download(url, bookp);
 		
 		return bookp;

@@ -35,10 +35,10 @@ public class sql {
 	private final Context context;
 	
 	public sql(Context ctx) {
-		Log.d("sql","new sql");
+		//Log.d("sql","new sql");
 		context = ctx;
 		DBHelper = new DatabaseHelper(context);
-		Log.d("sql","new sql finish");
+		//Log.d("sql","new sql finish");
 	}
 	
 
@@ -121,12 +121,12 @@ public class sql {
 
 		List<book> localbook=new ArrayList<book>();
 		if (!tableIsExist(DATABASE_TABLE)) {
-			Log.d("sql", "ok");
+			
 			return localbook;			
 		}
 		db = DBHelper.getReadableDatabase();
  
-		Log.d("sql", "1");
+		
 		Cursor cursor = db.query(
 				DATABASE_TABLE,
 				new String[] { "book_name", "book_id" ,"book_pic","book_path"},
@@ -134,11 +134,11 @@ public class sql {
 				null, null, null, null);
 		if (cursor == null || cursor.getCount() < 0)
 			return localbook;
-		Log.d("sql", "2");  
+		  
 		
 		cursor.moveToFirst();
 		
-		Log.d("sql", "3");
+		
 		for (int j = 0; j < cursor.getCount(); j++) {
 
 			int book_id = cursor.getInt(cursor.getColumnIndexOrThrow("book_id"));
@@ -180,7 +180,7 @@ public class sql {
 //	}
 //	
 	public boolean tableIsExist(String tableName) {
-		Log.d("sql 2", tableName);
+		
 		boolean result = false;
 		if (tableName == null) {
 			return false;
@@ -201,7 +201,7 @@ public class sql {
 					result = true;
 				}
 			}
-			Log.d("sql2", result+"");
+			
 		} catch (Exception e) {
 
 		}
