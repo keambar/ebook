@@ -1,0 +1,66 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/LinearLayout1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ActivityShop" >
+
+   
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+           android:background="#87CEEB"
+            android:gravity="center"
+            android:text="书城"
+            android:textColor="#ffffff"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+   
+
+    <LinearLayout
+        android:id="@+id/LinearLayout3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dip"
+        android:orientation="horizontal" >
+
+        <EditText
+            android:id="@+id/search"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dip"
+           
+            android:layout_weight="8"
+            android:background="@drawable/activityshop_setbar_bg"
+            android:ems="10"
+            android:gravity="center"
+            android:hint="请输入书名或作者" >
+
+            <requestFocus />
+        </EditText>
+
+        <ImageButton
+            android:id="@+id/imageButton2"
+            android:layout_width="40dip"
+            android:layout_height="42dip"
+            android:baselineAligned="true"
+            android:layout_margin="8dip"
+            android:layout_weight="1"
+            android:background="#87CEEB"
+            android:src="@android:drawable/ic_menu_search" />
+        
+       
+        
+    </LinearLayout>
+
+    	 <ListView
+            android:id="@+id/ListView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            />
+     
+    
+</LinearLayout>

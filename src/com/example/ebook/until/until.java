@@ -1,4 +1,4 @@
-package com.ebook.app.until;
+package com.example.ebook.until;
 
 import java.text.*;
 import android.util.Log;
@@ -8,11 +8,11 @@ public class until {
     private until () {
     }
 
-    //¹¦ÄÜ   £ºÅÐ¶ÏÈÕÆÚ×Ö·û´®ÊÇ·ñºÏ·¨º¯Êý
+    //ï¿½ï¿½ï¿½ï¿½   ï¿½ï¿½ï¿½Ð¶ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö·ï¿½ï¿½Ç·ï¿½Ï·ï¿½ï¿½ï¿½ï¿½ï¿½
 	public static boolean isDate ( String date ) {
         SimpleDateFormat sdf = new SimpleDateFormat ( "yyyy-MM-dd hh:mm:ss" );
         String isdate = date;
-        if ( date.length() == 10 )				//Èç¹ûÖ»ÓÐÈÕÆÚ£¬º¯Êý×Ô¶¯¼ÓÉÏ00:00:00
+        if ( date.length() == 10 )				//ï¿½ï¿½ï¿½Ö»ï¿½ï¿½ï¿½ï¿½ï¿½Ú£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô¶ï¿½ï¿½ï¿½ï¿½ï¿½00:00:00
             isdate = date + " 00:00:00";
         try {
             sdf.parse ( isdate );
@@ -23,30 +23,30 @@ public class until {
         }
     }
 
-    //²âÊÔ×Ö·û´®ÊÇ·ñÓÉÊý×Ö(0-9)×é³É
+    //ï¿½ï¿½ï¿½ï¿½ï¿½Ö·ï¿½ï¿½Ç·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½(0-9)ï¿½ï¿½ï¿½
     public static boolean isNum ( String in ) {
         return isNum ( in, 0, 0, 0 );
     }
 
-    //¹¦ÄÜ   £º²âÊÔ×Ö·û´®±íÊ¾µÄÊýÖµ¼°·¶Î§£¬ÇÒ×Ö·û´®Ö»ÄÜÊÇÊý×Ö×é³É
+    //ï¿½ï¿½ï¿½ï¿½   ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö·ï¿½ï¿½Ê¾ï¿½ï¿½ï¿½ï¿½Öµï¿½ï¿½ï¿½ï¿½Î§ï¿½ï¿½ï¿½ï¿½ï¿½Ö·ï¿½Ö»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
     public static boolean isNum ( String in, int length, double min, double max ) {
         String num = in;
-        int point  = 0;						//'.'µÄ¸öÊý
+        int point  = 0;						//'.'ï¿½Ä¸ï¿½ï¿½ï¿½
         int len = num.length ();
         if ( length > 0 ) {
-            if ( len > length || len == 0 ) {	//ÅÐ¶Ï×Ö·û´®³¤¶È,²»ºÏ·¨¿Õ·µ»Øfalse
+            if ( len > length || len == 0 ) {	//ï¿½Ð¶ï¿½ï¿½Ö·ï¿½ï¿½ï¿½,ï¿½ï¿½ï¿½Ï·ï¿½ï¿½Õ·ï¿½ï¿½ï¿½false
             	//Log.e( "until", "isNum(): Length error." );
                 return false;
             }
         }
-        else if ( len == 0 ) {	//ÅÐ¶Ï×Ö·û´®ÊÇ·ñÎª¿Õ,¿Õ·µ»Øfalse
+        else if ( len == 0 ) {	//ï¿½Ð¶ï¿½ï¿½Ö·ï¿½ï¿½Ç·ï¿½Îªï¿½ï¿½,ï¿½Õ·ï¿½ï¿½ï¿½false
         	//Log.e( "until", "isNum(): String is NULL" );
             return false;
         }
-        for ( int i = len - 1; i >= 0; i-- ) {		    //ÅÐ¶Ï×Ö·û´®Ö»ÄÜÊÇÊý×Ö
+        for ( int i = len - 1; i >= 0; i-- ) {		    //ï¿½Ð¶ï¿½ï¿½Ö·ï¿½Ö»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
             char ac = num.charAt ( i );
-            if ( ac == '.' && point == 0 &&  i != 0 ) {	//Èç¹ûÊÇ'.'×Ö·û£¬ÇÒÊÇµÚÒ»´Î³öÏÖ£¬ÇÒ²»ÊÇÖ»ÓÐÒ»¸öµã
-                if ( i > len - 4 ) {			        //ÅÐ¶ÏÐ¡ÊýÎ»Ö»ÄÜÊÇÁ½Î»
+            if ( ac == '.' && point == 0 &&  i != 0 ) {	//ï¿½ï¿½ï¿½ï¿½ï¿½'.'ï¿½Ö·ï¿½ï¿½ï¿½ï¿½Çµï¿½Ò»ï¿½Î³ï¿½ï¿½Ö£ï¿½ï¿½Ò²ï¿½ï¿½ï¿½Ö»ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½
+                if ( i > len - 4 ) {			        //ï¿½Ð¶ï¿½Ð¡ï¿½ï¿½Î»Ö»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Î»
                     point++;
                     continue;
                 }
@@ -57,15 +57,15 @@ public class until {
             }
         }
         if ( length != 0 ) {
-            double s = Double.parseDouble ( num );//ÏÖÔÚlenÎª×Ö·û´®±íÊ¾µÄÊýÖµ
-            if ( s < min  || s > max ) {		  //ÏÞÖÆ·¶Î§min-maxÖ®¼ä
+            double s = Double.parseDouble ( num );//ï¿½ï¿½ï¿½ï¿½lenÎªï¿½Ö·ï¿½ï¿½Ê¾ï¿½ï¿½ï¿½ï¿½Öµ
+            if ( s < min  || s > max ) {		  //ï¿½ï¿½ï¿½Æ·ï¿½Î§min-maxÖ®ï¿½ï¿½
             	//Log.e( "until", "isNum(): Amount limit error. " );
                 return false;
             }
         }
         return true;
     }
-    //¼ÆËãÈë×¡ÌìÊý£¬1Ð¡Ê±ºó¿ªÊ¼¼Æ·Ñ£¬6¸öÐ¡Ê±ÄÚËã°ëÌì£¬ÒÔÉÏËã1Ìì
+    //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½×¡ï¿½ï¿½ï¿½ï¿½1Ð¡Ê±ï¿½ï¿½Ê¼ï¿½Æ·Ñ£ï¿½6ï¿½ï¿½Ð¡Ê±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ì£¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½1ï¿½ï¿½
     public static double gettime ( long in, long out ) {
         double d = out - in, ans = 0;
 

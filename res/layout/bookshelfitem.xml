@@ -1,66 +1,59 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    
     android:orientation="vertical" >
-    
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_centerVertical="true"
-        android:layout_toLeftOf="@+id/shelf_image_right"
         android:layout_toRightOf="@+id/shelf_image_left"
         android:background="@drawable/bookshelf_layer_center"
         android:orientation="horizontal" >
-  
+
+        <!-- android:layout_toLeftOf="@+id/shelf_image_right" -->
+
         <LinearLayout
             android:id="@+id/linearLayout1"
-            android:layout_width="wrap_content"  
-            android:layout_height="wrap_content"  
-            android:layout_weight="1"  
-            android:gravity="center_horizontal" >  
-  
-            <ImageButton  
-                android:id="@+id/button_1"  
-                android:layout_width="80dp"  
-                android:layout_height="110dp"  
-                android:layout_marginTop="15dp"  />
-<!--                 android:background="@drawable/default_cover" -->
-                 
-        </LinearLayout>  
-  
-        <LinearLayout
-            android:id="@+id/linearLayout2"  
-            android:layout_width="wrap_content"  
-            android:layout_height="wrap_content"  
-            android:layout_weight="1"  
-            android:gravity="center_horizontal" >  
-  
-            <ImageButton  
-                android:id="@+id/button_2"  
-                android:layout_width="80dip"  
-                android:layout_height="110dp"  
-                android:layout_marginTop="15dp"  />
-<!--                 android:background="@drawable/default_cover"  -->
-                
-        </LinearLayout>  
-  
-        <LinearLayout  
-            android:id="@+id/linearLayout3"
-            android:layout_width="wrap_content"  
-            android:layout_height="wrap_content"  
-            android:layout_weight="1"  
-            android:gravity="center_horizontal" >  
-  
-            <ImageButton  
-                android:id="@+id/button_3"  
-                android:layout_width="80dp"  
-                android:layout_height="110dp"  
-                android:layout_marginTop="15dp"  />
-<!--                 android:background="@drawable/default_cover"  -->
-                
-        </LinearLayout>  
-    </LinearLayout>  
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"> 
+<!--             android:gravity="center_horizontal"> -->
+
+            <ImageButton
+                android:id="@+id/pic_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"/>
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/linearLayout2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/text_1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="#00000000"
+                android:text="书名"
+                android:textSize="30sp" />
+
+            <TextView
+                android:id="@+id/text_2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="50dp"
+                android:background="#00000000"
+                android:text="作者"
+                android:textSize="30sp" />
+        </RelativeLayout>
+    </LinearLayout>
 
 </LinearLayout>
