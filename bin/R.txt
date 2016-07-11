@@ -80,6 +80,7 @@ int id TextView_WX 0x7f0a0010
 int id TextView_YHZC 0x7f0a0009
 int id TextView_ZH 0x7f0a000a
 int id account 0x7f0a0002
+int id action_bookshelf 0x7f0a005c
 int id action_settings 0x7f0a005b
 int id animButtons 0x7f0a0008
 int id btn_bookshelf 0x7f0a0023
@@ -173,11 +174,13 @@ int layout txtstylemenu_layout 0x7f030013
 int layout txttest_activity_main 0x7f030014
 int layout txttextmenu_layout 0x7f030015
 int layout txtview_loadinglayout 0x7f030016
-int menu activity_login 0x7f090000
-int menu activity_register 0x7f090001
-int menu activity_setting 0x7f090002
-int menu anim_buttons 0x7f090003
-int menu main 0x7f090004
+int menu activity_bookshelf 0x7f090000
+int menu activity_login 0x7f090001
+int menu activity_register 0x7f090002
+int menu activity_setting 0x7f090003
+int menu activity_shop 0x7f090004
+int menu anim_buttons 0x7f090005
+int menu main 0x7f090006
 int string action_settings 0x7f070002
 int string app_name 0x7f070000
 int string hello_world 0x7f070001
