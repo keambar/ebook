@@ -9,7 +9,6 @@ import com.example.ebook.R;
 import com.example.ebook.db.sql;
 import com.example.ebook.entity.book;
 import com.example.ebook.entity.bookShelfAdapter;
-import com.example.testtxtbook.BookPlayActivity;
 
 import android.app.Activity;
 import android.content.Intent;

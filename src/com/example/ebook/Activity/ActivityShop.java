@@ -67,8 +67,19 @@ public class ActivityShop extends Activity {
 			e.printStackTrace();
 		}
 		bookAdapter adapter = new bookAdapter(ActivityShop.this, bookList);
+		Button searchButton=(Button) findViewById(R.id.search);
 		ListView listview = (ListView) findViewById(R.id.ListView);
 		listview.setAdapter(adapter);
+		
+		searchButton.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View arg0) {
+				// TODO Auto-generated method stub
+				
+			}
+		});
+		
 		listview.setOnItemClickListener(new OnItemClickListener() {
 
 			@Override

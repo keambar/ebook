@@ -4,14 +4,12 @@
 	<classpathentry exported="true" kind="con" path="com.android.ide.eclipse.adt.LIBRARIES"/>
 	<classpathentry exported="true" kind="con" path="com.android.ide.eclipse.adt.DEPENDENCIES"/>
 	<classpathentry kind="lib" path="C:/adworkspace/HWTxtReader/HwTxtReader/libs/android-support-v4.jar"/>
-	<classpathentry kind="lib" path="C:/adworkspace/HWTxtReader/HwTxtReader/libs/chardet.jar"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/jdk17"/>
-	<classpathentry kind="lib" path="C:/adworkspace/json.jar"/>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="src" path="gen"/>
 	<classpathentry kind="lib" path="libs/chardet.jar"/>
 	<classpathentry kind="lib" path="libs/xUtils-2.6.14.jar"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/HwTxtReader"/>
-	<classpathentry combineaccessrules="false" kind="src" path="/testTxtBook"/>
+	<classpathentry kind="lib" path="libs/json.jar"/>
 	<classpathentry kind="output" path="bin/classes"/>
 </classpath>
