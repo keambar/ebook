@@ -99,9 +99,9 @@ public class ActivityRegister extends Activity {
 			@Override
 			public void onClick(View v) {
 				
-				// TODO Auto-generated method stub
-				Intent intent=new Intent(ActivityRegister.this,ActivitySetting.class);
-				startActivity(intent);
+//				// TODO Auto-generated method stub
+//				Intent intent=new Intent(ActivityRegister.this,ActivitySetting.class);
+//				startActivity(intent);
 				ActivityRegister.this.finish();
 			}
 		});

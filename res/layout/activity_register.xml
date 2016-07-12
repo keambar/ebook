@@ -48,6 +48,7 @@
         android:layout_height="wrap_content"
         android:layout_alignBottom="@id/TextView_MM"
         android:layout_toRightOf="@id/TextView_MM"
+        android:inputType="textPassword"
         android:gravity="center" >
     </EditText>
 
@@ -102,6 +103,5 @@
         android:layout_below="@+id/TextView_WX"
         android:layout_toRightOf="@+id/TextView_YHZC"
         android:text="取消" />
-    
 
 </RelativeLayout>

@@ -123,9 +123,9 @@ public class ActivityLogin extends Activity {
 			@Override
 			public void onClick(View v) {
 				
-				// TODO Auto-generated method stub
-				Intent intent=new Intent(ActivityLogin.this,ActivitySetting.class);
-				startActivity(intent);
+//				// TODO Auto-generated method stub
+//				Intent intent=new Intent(ActivityLogin.this,ActivitySetting.class);
+//				startActivity(intent);
 				ActivityLogin.this.finish();
 			}
 		});

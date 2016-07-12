@@ -88,8 +88,13 @@ public class Bookshelf extends Activity {
 		// automatically handle clicks on the Home/Up button, so long
 		// as you specify a parent activity in AndroidManifest.xml.
 		int id = item.getItemId();
-		if (id == R.id.action_settings) {
-			Intent intent=new Intent(this,ActivitySetting.class);
+		if (id == R.id.action_login) {
+			Intent intent=new Intent(this,ActivityLogin.class);
+			startActivity(intent);
+			return true;
+		}
+		if (id == R.id.action_register) {
+			Intent intent=new Intent(this,ActivityRegister.class);
 			startActivity(intent);
 			return true;
 		}
