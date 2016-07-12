@@ -16,6 +16,7 @@ import com.example.ebook.entity.book;
 import com.example.ebook.entity.bookAdapter;
 import com.example.ebook.until.Url;
 import com.lidroid.xutils.*;
+import com.sun.xml.internal.ws.policy.privateutil.PolicyUtils.Text;
 
 import android.R.string;
 import android.os.Bundle;
@@ -34,7 +35,9 @@ import android.view.Window;
 import android.view.View.OnClickListener;
 import android.widget.AdapterView;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.GridView;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
@@ -66,19 +69,36 @@ public class ActivityShop extends Activity {
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
-		bookAdapter adapter = new bookAdapter(ActivityShop.this, bookList);
-		Button searchButton=(Button) findViewById(R.id.search);
-		ListView listview = (ListView) findViewById(R.id.ListView);
-		listview.setAdapter(adapter);
 		
-		searchButton.setOnClickListener(new OnClickListener() {
-			
+		bookAdapter adapter = new bookAdapter(ActivityShop.this, bookList);
+		final ListView listview = (ListView) findViewById(R.id.ListView);
+		listview.setAdapter(adapter);
+
+		
+		
+		
+		
+		ImageButton buttonSeek=(ImageButton)findViewById(R.id.imageButton2);
+		buttonSeek.setOnClickListener(new OnClickListener(){
+
 			@Override
 			public void onClick(View arg0) {
 				// TODO Auto-generated method stub
-				
+				EditText editText=(EditText)findViewById(R.id.search);
+				String s=editText.getText().toString();
+				List<book> tempList = new ArrayList<>();
+				for(book e:bookList){
+					if(e.getbookname().indexOf(s)!=-1||s.equals("")){
+						tempList.add(e);
+					}
+				}
+				bookAdapter tempAdapter = new bookAdapter(ActivityShop.this, tempList);
+				listview.setAdapter(tempAdapter);
 			}
+			
 		});
+		
+		
 		
 		listview.setOnItemClickListener(new OnItemClickListener() {
 
