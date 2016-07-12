@@ -8,107 +8,127 @@
         android:id="@+id/TextView_YHZC"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center"
         android:background="#3399cc"
-         android:padding="5dip"
+        android:gravity="center"
+        android:padding="10dip"
         android:text="用户注册"
         android:textColor="#ffffff"
         android:textSize="25dp" />
 
-    <TextView
-        android:id="@+id/TextView_ZH"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/TextView_YHZC"   
-        android:layout_marginTop="10dp"  
-        android:gravity="center"
-        android:background="@drawable/user" />
-<!--  android:layout_marginTop="15dp" -->
-    <EditText
-        android:id="@+id/EditView_ZH"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@id/TextView_ZH"
-        android:layout_toRightOf="@id/TextView_ZH"
-        android:gravity="center" />
-
-    <TextView
-        android:id="@+id/TextView_MM"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/TextView_ZH"
-        android:gravity="center"
-         android:background="@drawable/password" />
-<!--  android:layout_marginTop="15dp" -->
-    <EditText
-        android:id="@+id/EditView_MM"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@id/TextView_MM"
-        android:layout_toRightOf="@id/TextView_MM"
-        android:gravity="center"
-        android:inputType="textPassword" >
-    </EditText>
-
-    <TextView
-        android:id="@+id/TextView_QQ"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/TextView_MM"
-        android:padding="10dp"      
-        android:gravity="center"
-        android:background="@drawable/qq"/>
-
-    <EditText
-        android:id="@+id/EditView_QQ"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@id/TextView_QQ"
-        android:layout_toRightOf="@id/TextView_QQ"
-        android:gravity="center" >
-    </EditText>
-
-    <TextView
-        android:id="@+id/TextView_WX"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/TextView_QQ"
-        android:gravity="center"
-        android:background="@drawable/weixin"/>
-
-    <EditText
-        android:id="@+id/EditView_WX"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@id/TextView_WX"
-        android:layout_toRightOf="@id/TextView_WX"
-        android:gravity="center" >
-    </EditText>
-
     <RelativeLayout
-        android:id="@+id/rlayout"
-        android:layout_width="wrap_content"
+        android:id="@+id/linear1"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dip" 
-        android:layout_below="@id/EditView_WX">
+        android:layout_below="@id/TextView_YHZC"
+        android:layout_margin="10dp"
+        android:background="@drawable/activityshop_setbar_bg" >
 
-        <Button
-            android:id="@+id/ButtonZc"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"            
-            android:background="#3399cc"
-            android:text="注册"
-            android:textColor="#ffffff" />
-
-        <Button
-            android:id="@+id/ButtonQx"
+        <TextView
+            android:id="@+id/TextView_ZH"
             android:layout_width="wrap_content"
-            android:layout_height="40dip"
-            android:layout_alignParentRight="true"
-            android:layout_below="@id/ButtonZc"
-            android:background="#FFFFFF"
-            android:text="取消"
-            android:textColor="#808080" />
+            android:layout_height="wrap_content"
+            android:background="@drawable/user"
+            android:gravity="center" />
+        <!-- android:layout_marginTop="15dp" -->
+
+        <EditText
+            android:id="@+id/EditView_ZH"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@id/TextView_ZH"
+            android:layout_toRightOf="@id/TextView_ZH"
+            android:layout_marginBottom="10dp"
+            android:background="@null"
+            android:hint="账户" />
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="1dip"
+            android:background="#C0C0C0"
+            android:layout_below="@id/EditView_ZH" />
+
+        <TextView
+            android:id="@+id/TextView_MM"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/TextView_ZH"
+            android:background="@drawable/password"
+            android:gravity="center" />
+        <!-- android:layout_marginTop="15dp" -->
+
+        <EditText
+            android:id="@+id/EditView_MM"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@id/TextView_MM"
+            android:layout_toRightOf="@id/TextView_MM"
+            android:background="@null"
+            android:layout_marginBottom="10dp"
+            android:hint="密码"
+            android:inputType="textPassword" >
+        </EditText>
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="1dip"
+            android:background="#C0C0C0"
+            android:layout_below="@id/EditView_MM" />
+
+        <TextView
+            android:id="@+id/TextView_QQ"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/TextView_MM"
+            android:background="@drawable/qq"
+            android:gravity="center"
+            android:padding="10dp" />
+
+        <EditText
+            android:id="@+id/EditView_QQ"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@id/TextView_QQ"
+            android:layout_toRightOf="@id/TextView_QQ"
+            android:layout_marginBottom="10dp"
+            android:background="@null"
+            android:hint="QQ号" >
+        </EditText>
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="1dip"
+            android:background="#C0C0C0"
+            android:layout_below="@id/EditView_QQ" />
+
+        <TextView
+            android:id="@+id/TextView_WX"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/TextView_QQ"
+            android:background="@drawable/weixin"
+            android:gravity="center" />
+
+        <EditText
+            android:id="@+id/EditView_WX"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@id/TextView_WX"
+            android:layout_toRightOf="@id/TextView_WX"
+            android:layout_marginBottom="10dp"
+            android:background="@null"
+            android:hint="微信号" >
+        </EditText>
     </RelativeLayout>
+
+    <Button
+        android:id="@+id/ButtonZc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/linear1"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:background="@drawable/alogin"
+        android:text="注册"
+        android:textColor="#ffffff" />
 
 </RelativeLayout>

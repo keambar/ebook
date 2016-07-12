@@ -95,18 +95,6 @@ public class ActivityRegister extends Activity {
 			}
 		});
 		
-		Button QXButton=(Button) findViewById(R.id.ButtonQx);
-		QXButton.setOnClickListener(new OnClickListener() {
-			
-			@Override
-			public void onClick(View v) {
-				
-//				// TODO Auto-generated method stub
-//				Intent intent=new Intent(ActivityRegister.this,ActivitySetting.class);
-//				startActivity(intent);
-				ActivityRegister.this.finish();
-			}
-		});
 	}
 	public Handler handler =new Handler(){
 		@Override

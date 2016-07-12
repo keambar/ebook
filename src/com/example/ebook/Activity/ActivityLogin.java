@@ -118,18 +118,7 @@ public class ActivityLogin extends Activity {
 			}
 		});
 		
-		Button quit=(Button) findViewById(R.id.quit);
-		quit.setOnClickListener(new OnClickListener() {
-			
-			@Override
-			public void onClick(View v) {
-				
-//				// TODO Auto-generated method stub
-//				Intent intent=new Intent(ActivityLogin.this,ActivitySetting.class);
-//				startActivity(intent);
-				ActivityLogin.this.finish();
-			}
-		});
+		
 	}
 
 	public Handler handler =new Handler(){

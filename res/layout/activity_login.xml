@@ -1,104 +1,110 @@
-		<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/tableLayout1"
     android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
-    >
-    
-    <TextView 
-        android:gravity="center"
+    android:layout_height="fill_parent" >
+
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="25dp"
-        android:layout_marginBottom="10dip"
-        android:padding="5dip"
         android:background="#3399cc"
+        android:gravity="center"
+        android:padding="10dip"
+         android:layout_marginBottom="10dp"
         android:text="用户登录"
-        android:textColor="#ffffff"/>
-    
-
-    <TableRow android:id="@+id/TableRow01"
-        android:paddingTop="10dip">
-        
-        <TextView 
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-           android:background="@drawable/user"
-           android:padding="15dp"
-            android:gravity="right"
-            android:textSize="15dip"
-            android:layout_marginLeft="5dp"
-            android:layout_marginRight="5dp"/>
-<!--          android:text="账号:" -->
-        <EditText 
-            android:id="@+id/account"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:hint="请输入您的账号"
-            android:maxLines="2"/>
-    </TableRow>
-    
-    
-    
-    <TableRow android:id="@+id/TbaleRow02"
-        android:layout_marginTop="10dip"
-        android:paddingBottom="5dp">
-        
-        <TextView 
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/password"
-           android:padding="15dp"
-            android:gravity="right"
-            android:textSize="15dip"
-            android:layout_marginLeft="5dp"
-            android:layout_marginRight="5dp"/>
-<!--          android:text="密码:" -->
-        <EditText 
-            android:id="@+id/pwd"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"          
-            android:inputType="textPassword"
-            android:hint="请输入您的密码"
-            android:maxLines="2"
-            />
-    </TableRow>
-    
-
-<!--     <TableRow android:id="@+id/TableRow03" -->
-<!--         android:layout_width="fill_parent" -->
-<!--         android:layout_height="wrap_content" -->
-<!--         android:gravity="center_horizontal"> -->
-        <RelativeLayout android:id="@+id/rlayout"
-            android:layout_marginTop="10dip"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            >
-        <Button 
-        android:id="@+id/login"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="登录"
         android:textColor="#ffffff"
-        android:background="#3399cc"/>
-    	
-    	<Button 
-        android:id="@+id/quit"
+        android:textSize="25dp" />
+
+    <LinearLayout
         android:layout_width="wrap_content"
-        android:layout_height="40dip"
-        android:layout_below="@id/login"
-       android:layout_alignParentRight="true"
-       android:background="#FFFFFF"
-        android:text="取消"
-        android:textColor="#808080"/>
-    	
-    	</RelativeLayout>
-    	
-<!--     </TableRow> -->
-    
-    
-    
-    
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp"
+        android:background="@drawable/activityshop_setbar_bg"
+        android:orientation="vertical" >
+
+        <TableRow
+            android:id="@+id/TableRow01"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/user"
+                android:gravity="right"
+                android:padding="15dp"
+                android:textSize="15dip" />
+            <!-- android:text="账号:" -->
+            <!-- android:layout_marginLeft="5dp" -->
+            <!-- android:layout_marginRight="5dp" -->
+
+            <EditText
+                android:id="@+id/account"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="10dp"
+                android:layout_weight="1"
+                android:background="@null"
+                android:hint="账号"
+                android:maxLines="2" />
+        </TableRow>
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="1dip"
+            android:background="#C0C0C0" />
+
+        <TableRow
+            android:id="@+id/TbaleRow02"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/password"
+                android:gravity="right"
+                android:padding="15dp"
+                android:textSize="15dip" />
+
+
+            <EditText
+                android:id="@+id/pwd"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="10dp"
+                android:layout_weight="1"
+                android:background="@null"
+                android:layout_marginTop="5dip"
+                android:hint="密码"
+                android:inputType="textPassword"
+                android:maxLines="2" />
+        </TableRow>
+    </LinearLayout>
+
+    <!-- <TableRow android:id="@+id/TableRow03" -->
+    <!-- android:layout_width="fill_parent" -->
+    <!-- android:layout_height="wrap_content" -->
+    <!-- android:gravity="center_horizontal"> -->
+
+    <RelativeLayout
+        android:id="@+id/rlayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dip" >
+
+        <Button
+            android:id="@+id/login"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:background="@drawable/alogin"
+            android:text="登录"
+            android:textColor="#ffffff" />
+    </RelativeLayout>
+
+    <!-- </TableRow> -->
 
 </TableLayout>
