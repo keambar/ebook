@@ -32,7 +32,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="8dip"
-           
+           android:paddingTop="10dp"
+           android:paddingBottom="10dp"
             android:layout_weight="8"
             android:background="@drawable/activityshop_setbar_bg"
             android:ems="10"
